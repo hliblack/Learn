@@ -1,0 +1,29 @@
+# Copyright VMware, Inc.
+# SPDX-License-Identifier: APACHE-2.0
+
+version: '2'
+
+services:
+  jenkins:
+    image: bitnami/jenkins:2.426.1-debian-11-r0
+    ports:
+      - '81:8080'
+      - '4431:443'
+    environment:
+      - JENKINS_EMAIL=hliblack@163.com
+      - JENKINS_USERNAME=admin
+      - JENKINS_PASSWORD=admin
+      - JENKINS_HTTP_PORT_NUMBER=8080
+      - JENKINS_HTTPS_PORT_NUMBER=8443
+      # - JENKINS_EXTERNAL_HTTP_PORT_NUMBER=8080
+      # - JENKINS_EXTERNAL_HTTPS_PORT_NUMBER=8443
+      # - JENKINS_JNLP_PORT_NUMBER=50000
+      # - JENKINS_FORCE_HTTPS=no
+
+    volumes:
+      #- 'jenkins_data:/bitnami/jenkins'
+      - /desktop/docker-volume/jenkins:/bitnami/jenkins
+
+# volumes:
+#   jenkins_data:
+#     driver: local

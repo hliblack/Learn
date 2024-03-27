@@ -1,0 +1,14 @@
+---
+version: "3"
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    restart: unless-stopped
+    ports:
+      - 8123:8123
+    volumes:
+      - /share/CACHEDEV1_DATA/Container/homeassistant/config:/config
+      - /run/dbus:/run/dbus:ro
+    environment:
+      - TZ=Asia/Shanghai
+    

@@ -1,0 +1,18 @@
+version: "3"
+services:
+  obsidian:
+    image: 'ghcr.io/sytone/obsidian-remote:latest'
+    container_name: obsidian-remote
+    restart: unless-stopped
+    ports:
+      - 18080:8080
+      - 18443:8443
+    volumes:
+      - /share/CACHEDEV1_DATA/Container/obsidian/vaults:/vaults
+      - /share/CACHEDEV1_DATA/Container/obsidian/config:/config
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Asia/Shanghai
+      - TITLE="Obsidian"
+      - DOCKER_MODS=linuxserver/mods:universal-git
