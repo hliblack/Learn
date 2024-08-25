@@ -1,0 +1,13 @@
+version: '3'
+services:
+  cookiecloud:
+    image: easychen/cookiecloud:latest
+    container_name: cookiecloud-app
+    environment:
+      - PUID=1000
+      - PGID=100
+    restart: always
+    volumes:
+      - /share/CACHEDEV1_DATA/Container/data:/data/api/data
+    ports:
+      - 8088:8088
