@@ -1,15 +1,15 @@
-version: v2
+version: "3"
 services:
   vaultwarden:
-    image: vaultwarden/server:latest
+    image: docker.m.daocloud.io/vaultwarden/server:latest
     container_name: vaultwarden
     environment:
       - PUID=1000
-      - PGID=100
+      - PGID=1000
       - TZ=Asia/Shanghai
     volumes:
-      - /share/CACHEDEV1_DATA/Container/vaultwarden:/data
+      - /share/Container/vaultwarden:/data
     ports:
-      - 7000:80
+      - 7001:80
     restart: unless-stopped
   
