@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  samba:
+    image: dperson/samba
+    container_name: dperson-samba
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 139:139
+      - 445:445
+    volumes:
+      - /share/hliblack:/mount
+    command: '-u "hliblack;xinshi1993." -s "share;/mount/;yes;yes;yes;all;none" -s "public;/mount/;yes;no;no;all;none"'
