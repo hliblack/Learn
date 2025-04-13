@@ -11,4 +11,4 @@ services:
       - 445:445
     volumes:
       - /share/hliblack:/mount
-    command: '-u "hliblack;xinshi1993." -s "share;/mount/;yes;yes;yes;all;none" -s "public;/mount/;yes;no;no;all;none"'
+    command: '-u "name;pass." -s "share;/mount/;yes;yes;yes;all;none" -s "public;/mount/;yes;no;no;all;none"'
