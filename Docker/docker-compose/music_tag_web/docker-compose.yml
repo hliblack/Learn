@@ -1,0 +1,12 @@
+# 本地音乐刮削
+version: '3'
+services:
+  music-tag:
+    image: docker.m.daocloud.io/xhongc/music_tag_web:latest
+    container_name: music-tag-web
+    ports:
+      - "8002:8002"
+    volumes:
+      - /share/CACHEDEV1_DATA/hliblack/广播剧:/app/media:rw
+      - /share/CACHEDEV1_DATA/Container/music_tag_web/config:/app/data
+    restart: unless-stopped
